@@ -46,11 +46,16 @@ A pre-configured CIS-1 hardened Ubuntu image with enhanced security measures, op
     make create-cis-ami
     ```
 
-9. Check the AWS console to verify the availability of “ID-Pal-CIS-hardened-ubuntu-AMI”
+9. Check the AWS console to verify the availability of “ID-Pal-CIS-hardened-ubuntu-AMI” in the EU region
 10. After crearting the AMI, perform the below command to delete the ubuntu-pro instance
 
     ```bash
     make delete-ubuntu-pro
+    ```
+11. Copy the latest “ID-Pal-CIS-hardened-ubuntu-AMI” image to the US region
+
+    ```bash
+    make copy-cis-ami
     ```
 
 ### Reference links:

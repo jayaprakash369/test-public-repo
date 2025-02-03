@@ -102,6 +102,30 @@ This command will **create/update** resources in AWS as per your Terraform confi
 
 ---
 
+### **Plan to destroy Infrastructure** (`plan-destroy`)
+
+Before destroying the infrastructure, you should generate an execution plan to see what configurations will be destroyed by the Terraform.
+
+### **Command:**
+
+```bash
+cd environments/<environment-name>
+make plan-destroy
+
+```
+
+### **Example:**
+
+```bash
+cd environments/prod-eu
+make plan-destroy
+
+```
+
+This will create the plan file what resources in the environment will be destroyed. Please review the plan carefully before appying the destroy command.
+
+---
+
 ### **Destroy Infrastructure** (`destroy`)
 
 To remove all infrastructure related to an environment, run:

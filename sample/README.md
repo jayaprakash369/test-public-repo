@@ -1,4 +1,4 @@
-# Terraform Workflow Guide
+# Terraform usage Guide
 
 ## Introduction
 
@@ -8,7 +8,7 @@ This document provides a step-by-step guide on how to execute Terraform commands
 
 ### **Initialize Terraform** (`init`)
 
-Before executing any Terraform commands, you need to initialize the working directory.
+Before executing any Terraform commands, you need to initialize the working directory to download all required providers and modules, setting up the working directory for Terraform.
 
 ### **Command:**
 
@@ -25,14 +25,11 @@ cd environments/prod-eu
 make init
 
 ```
-
-This will download all required providers and modules, setting up the working directory for Terraform.
-
 ---
 
 ### **Plan Changes** (`plan`)
 
-Before applying changes, you should generate an execution plan to see what Terraform will modify.
+Before applying changes, you should generate an execution plan to see what configurations will be modified by the Terraform.
 
 ### **Command:**
 
@@ -51,9 +48,6 @@ make plan
 ```
 
 This command will show what resources will be created, updated, or destroyed.
-
-> Tip: Ensure all changes in main.tf and .tfvars are committed before running the plan.
-> 
 
 ---
 
@@ -83,7 +77,7 @@ This will check for syntax errors, missing variables, and general configuration 
 
 ### **Apply Changes** (`apply`)
 
-Once you are satisfied with the Terraform plan, apply the changes to provision infrastructure.
+Once you are satisfied with the Terraform plan, apply the changes to provision infrastructure/configuration changes.
 
 ### **Command:**
 
@@ -107,8 +101,6 @@ This command will **create/update** resources in AWS as per your Terraform confi
 > 
 
 ---
-
-## Additional Terraform Commands
 
 ### **Destroy Infrastructure** (`destroy`)
 
